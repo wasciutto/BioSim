@@ -28,7 +28,7 @@ def run_trial(config, log):
         log.debug(environ)
         log.debug(bio1)
 
-    return [str(bio1.areaNumber), str(environ.day), str(bio1.maxVegetation)]
+    return {"Area Number":str(bio1.areaNumber), "Days Survived":str(environ.day), "Max Vegetation":str(bio1.maxVegetation)}
 
 def run_trials(config, log, num_trials):
     trial_results = {}
@@ -48,7 +48,7 @@ def generate_csv_report(trial_results):
         writer.writerow(["Test Number", "Days Survived", "Max Vegetation"])
 
         for trial in trial_results:
-            writer.writerow(trial_results[trial])
+            writer.writerow(trial_results[trial].values())
 
 def generate_json_report(trial_results):
     with open('sim_output.json', 'w', encoding='utf-8') as f:
