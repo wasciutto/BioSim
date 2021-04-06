@@ -41,8 +41,8 @@ def run_trials(config, log, num_trials):
 
     return trial_results
 
-def generate_csv_report(trial_results):
-    with open('sim_output.csv', 'w', newline='') as file:
+def generate_csv_report(config, trial_results):
+    with open(config['CSV_REPORT_PATH'], 'w', newline='') as file:
         writer = csv.writer(file)
 
         writer.writerow(["Test Number", "Days Survived", "Max Vegetation"])
@@ -50,13 +50,15 @@ def generate_csv_report(trial_results):
         for trial in trial_results:
             writer.writerow(trial_results[trial].values())
 
-def generate_json_report(trial_results):
-    with open('sim_output.json', 'w', encoding='utf-8') as f:
-        json.dump(trial_results, f, ensure_ascii=False, indent=4)
+def generate_json_report(config, trial_results):
+    with open(config['JSON_REPORT_PATH'], 'w', encoding='utf-8') as file:
+        json.dump(trial_results, file, ensure_ascii=False, indent=4)
 
 @click.command()
 @click.option('--num_trials', default=50, help="Number of times to iterate simulation")
-def run_cli(num_trials):
+@click.option('--csv/--no-csv', default=True, help="Create a csv report.")
+@click.option('--json/--no-json', default=False, help="Create a json report")
+def run_cli(num_trials, csv, json):
     config = configparser.ConfigParser()
     config.read('sim_config.ini')
 
@@ -64,8 +66,8 @@ def run_cli(num_trials):
 
     trial_results = run_trials(config['DEFAULT'], log, num_trials)
 
-    generate_csv_report(trial_results)
-    generate_json_report(trial_results)
+    if csv: generate_csv_report(config['DEFAULT'], trial_results)
+    if json: generate_json_report(config['DEFAULT'], trial_results)
 
 
 if __name__ == "__main__":
