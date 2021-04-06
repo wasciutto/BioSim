@@ -4,7 +4,7 @@ import click
 import matplotlib.pyplot as plt
 import numpy
 
-def plot_data(data: numpy, headers: tuple):
+def plot_data(data: numpy.ndarray, headers: tuple):
     """Plots a weighted scatterplot of the BioArea trial data."""
     clr = plt.get_cmap("Reds", 255)
     fig, ax = plt.subplots()
