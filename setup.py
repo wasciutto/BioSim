@@ -10,6 +10,10 @@ CLASSIFIERS = [ 'Intended Audience :: Developers',
                 'Programming Language :: Python',
                 'License :: MIT License',
                 'Operating System :: OS Independent']
+INSTALL_REQUIRES = [ 'matplotlib~=3.4.1',
+                     'numpy~=1.20.2',
+                     'click~=7.1.2',
+                     'Flask~=1.1.2']
 
 setup(name=DIST_NAME,
       author=AUTHOR,
@@ -17,4 +21,5 @@ setup(name=DIST_NAME,
       version=VERSION,
       description=DESCRIPTION,
       url=URL,
-      classifiers=CLASSIFIERS)
+      classifiers=CLASSIFIERS,
+      install_requires=INSTALL_REQUIRES)
