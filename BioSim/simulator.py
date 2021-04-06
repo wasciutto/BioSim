@@ -135,7 +135,7 @@ if __name__ == "__main__":
 
     cVeg = 0
     cDays = 0
-    with open('sim_output.csv', 'w', newline='') as file:
+    with open('../sim_output.csv', 'w', newline='') as file:
     
         writer = csv.writer(file)
 
