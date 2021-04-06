@@ -1,0 +1,502 @@
+{
+    "0": {
+        "Area Number": "1",
+        "Days Survived": "47",
+        "Max Vegetation": "404"
+    },
+    "1": {
+        "Area Number": "2",
+        "Days Survived": "72",
+        "Max Vegetation": "760"
+    },
+    "2": {
+        "Area Number": "3",
+        "Days Survived": "62",
+        "Max Vegetation": "2153"
+    },
+    "3": {
+        "Area Number": "4",
+        "Days Survived": "149",
+        "Max Vegetation": "2598"
+    },
+    "4": {
+        "Area Number": "5",
+        "Days Survived": "62",
+        "Max Vegetation": "963"
+    },
+    "5": {
+        "Area Number": "6",
+        "Days Survived": "75",
+        "Max Vegetation": "812"
+    },
+    "6": {
+        "Area Number": "7",
+        "Days Survived": "379",
+        "Max Vegetation": "1937"
+    },
+    "7": {
+        "Area Number": "8",
+        "Days Survived": "108",
+        "Max Vegetation": "1880"
+    },
+    "8": {
+        "Area Number": "9",
+        "Days Survived": "87",
+        "Max Vegetation": "289"
+    },
+    "9": {
+        "Area Number": "10",
+        "Days Survived": "253",
+        "Max Vegetation": "1095"
+    },
+    "10": {
+        "Area Number": "11",
+        "Days Survived": "248",
+        "Max Vegetation": "1136"
+    },
+    "11": {
+        "Area Number": "12",
+        "Days Survived": "714",
+        "Max Vegetation": "2018"
+    },
+    "12": {
+        "Area Number": "13",
+        "Days Survived": "128",
+        "Max Vegetation": "1231"
+    },
+    "13": {
+        "Area Number": "14",
+        "Days Survived": "146",
+        "Max Vegetation": "1791"
+    },
+    "14": {
+        "Area Number": "15",
+        "Days Survived": "307",
+        "Max Vegetation": "762"
+    },
+    "15": {
+        "Area Number": "16",
+        "Days Survived": "56",
+        "Max Vegetation": "349"
+    },
+    "16": {
+        "Area Number": "17",
+        "Days Survived": "307",
+        "Max Vegetation": "1890"
+    },
+    "17": {
+        "Area Number": "18",
+        "Days Survived": "69",
+        "Max Vegetation": "765"
+    },
+    "18": {
+        "Area Number": "19",
+        "Days Survived": "54",
+        "Max Vegetation": "640"
+    },
+    "19": {
+        "Area Number": "20",
+        "Days Survived": "245",
+        "Max Vegetation": "2234"
+    },
+    "20": {
+        "Area Number": "21",
+        "Days Survived": "113",
+        "Max Vegetation": "593"
+    },
+    "21": {
+        "Area Number": "22",
+        "Days Survived": "51",
+        "Max Vegetation": "473"
+    },
+    "22": {
+        "Area Number": "23",
+        "Days Survived": "93",
+        "Max Vegetation": "1823"
+    },
+    "23": {
+        "Area Number": "24",
+        "Days Survived": "185",
+        "Max Vegetation": "1600"
+    },
+    "24": {
+        "Area Number": "25",
+        "Days Survived": "44",
+        "Max Vegetation": "578"
+    },
+    "25": {
+        "Area Number": "26",
+        "Days Survived": "382",
+        "Max Vegetation": "1199"
+    },
+    "26": {
+        "Area Number": "27",
+        "Days Survived": "118",
+        "Max Vegetation": "1436"
+    },
+    "27": {
+        "Area Number": "28",
+        "Days Survived": "47",
+        "Max Vegetation": "716"
+    },
+    "28": {
+        "Area Number": "29",
+        "Days Survived": "392",
+        "Max Vegetation": "2313"
+    },
+    "29": {
+        "Area Number": "30",
+        "Days Survived": "259",
+        "Max Vegetation": "1994"
+    },
+    "30": {
+        "Area Number": "31",
+        "Days Survived": "198",
+        "Max Vegetation": "1464"
+    },
+    "31": {
+        "Area Number": "32",
+        "Days Survived": "119",
+        "Max Vegetation": "1283"
+    },
+    "32": {
+        "Area Number": "33",
+        "Days Survived": "109",
+        "Max Vegetation": "1041"
+    },
+    "33": {
+        "Area Number": "34",
+        "Days Survived": "223",
+        "Max Vegetation": "1676"
+    },
+    "34": {
+        "Area Number": "35",
+        "Days Survived": "530",
+        "Max Vegetation": "2722"
+    },
+    "35": {
+        "Area Number": "36",
+        "Days Survived": "276",
+        "Max Vegetation": "1609"
+    },
+    "36": {
+        "Area Number": "37",
+        "Days Survived": "85",
+        "Max Vegetation": "578"
+    },
+    "37": {
+        "Area Number": "38",
+        "Days Survived": "150",
+        "Max Vegetation": "1158"
+    },
+    "38": {
+        "Area Number": "39",
+        "Days Survived": "60",
+        "Max Vegetation": "1718"
+    },
+    "39": {
+        "Area Number": "40",
+        "Days Survived": "228",
+        "Max Vegetation": "2495"
+    },
+    "40": {
+        "Area Number": "41",
+        "Days Survived": "55",
+        "Max Vegetation": "325"
+    },
+    "41": {
+        "Area Number": "42",
+        "Days Survived": "40",
+        "Max Vegetation": "670"
+    },
+    "42": {
+        "Area Number": "43",
+        "Days Survived": "194",
+        "Max Vegetation": "1196"
+    },
+    "43": {
+        "Area Number": "44",
+        "Days Survived": "78",
+        "Max Vegetation": "1275"
+    },
+    "44": {
+        "Area Number": "45",
+        "Days Survived": "103",
+        "Max Vegetation": "598"
+    },
+    "45": {
+        "Area Number": "46",
+        "Days Survived": "104",
+        "Max Vegetation": "1548"
+    },
+    "46": {
+        "Area Number": "47",
+        "Days Survived": "60",
+        "Max Vegetation": "1220"
+    },
+    "47": {
+        "Area Number": "48",
+        "Days Survived": "173",
+        "Max Vegetation": "1863"
+    },
+    "48": {
+        "Area Number": "49",
+        "Days Survived": "293",
+        "Max Vegetation": "1159"
+    },
+    "49": {
+        "Area Number": "50",
+        "Days Survived": "65",
+        "Max Vegetation": "1227"
+    },
+    "50": {
+        "Area Number": "51",
+        "Days Survived": "279",
+        "Max Vegetation": "1673"
+    },
+    "51": {
+        "Area Number": "52",
+        "Days Survived": "86",
+        "Max Vegetation": "1201"
+    },
+    "52": {
+        "Area Number": "53",
+        "Days Survived": "498",
+        "Max Vegetation": "1503"
+    },
+    "53": {
+        "Area Number": "54",
+        "Days Survived": "169",
+        "Max Vegetation": "2293"
+    },
+    "54": {
+        "Area Number": "55",
+        "Days Survived": "201",
+        "Max Vegetation": "1069"
+    },
+    "55": {
+        "Area Number": "56",
+        "Days Survived": "96",
+        "Max Vegetation": "1489"
+    },
+    "56": {
+        "Area Number": "57",
+        "Days Survived": "252",
+        "Max Vegetation": "1161"
+    },
+    "57": {
+        "Area Number": "58",
+        "Days Survived": "78",
+        "Max Vegetation": "1547"
+    },
+    "58": {
+        "Area Number": "59",
+        "Days Survived": "229",
+        "Max Vegetation": "1486"
+    },
+    "59": {
+        "Area Number": "60",
+        "Days Survived": "57",
+        "Max Vegetation": "1033"
+    },
+    "60": {
+        "Area Number": "61",
+        "Days Survived": "119",
+        "Max Vegetation": "1023"
+    },
+    "61": {
+        "Area Number": "62",
+        "Days Survived": "203",
+        "Max Vegetation": "1759"
+    },
+    "62": {
+        "Area Number": "63",
+        "Days Survived": "43",
+        "Max Vegetation": "546"
+    },
+    "63": {
+        "Area Number": "64",
+        "Days Survived": "660",
+        "Max Vegetation": "2039"
+    },
+    "64": {
+        "Area Number": "65",
+        "Days Survived": "375",
+        "Max Vegetation": "2754"
+    },
+    "65": {
+        "Area Number": "66",
+        "Days Survived": "59",
+        "Max Vegetation": "414"
+    },
+    "66": {
+        "Area Number": "67",
+        "Days Survived": "297",
+        "Max Vegetation": "891"
+    },
+    "67": {
+        "Area Number": "68",
+        "Days Survived": "241",
+        "Max Vegetation": "2285"
+    },
+    "68": {
+        "Area Number": "69",
+        "Days Survived": "204",
+        "Max Vegetation": "1483"
+    },
+    "69": {
+        "Area Number": "70",
+        "Days Survived": "57",
+        "Max Vegetation": "377"
+    },
+    "70": {
+        "Area Number": "71",
+        "Days Survived": "414",
+        "Max Vegetation": "1454"
+    },
+    "71": {
+        "Area Number": "72",
+        "Days Survived": "139",
+        "Max Vegetation": "830"
+    },
+    "72": {
+        "Area Number": "73",
+        "Days Survived": "179",
+        "Max Vegetation": "1527"
+    },
+    "73": {
+        "Area Number": "74",
+        "Days Survived": "156",
+        "Max Vegetation": "2312"
+    },
+    "74": {
+        "Area Number": "75",
+        "Days Survived": "122",
+        "Max Vegetation": "1185"
+    },
+    "75": {
+        "Area Number": "76",
+        "Days Survived": "288",
+        "Max Vegetation": "757"
+    },
+    "76": {
+        "Area Number": "77",
+        "Days Survived": "251",
+        "Max Vegetation": "1842"
+    },
+    "77": {
+        "Area Number": "78",
+        "Days Survived": "71",
+        "Max Vegetation": "248"
+    },
+    "78": {
+        "Area Number": "79",
+        "Days Survived": "177",
+        "Max Vegetation": "2000"
+    },
+    "79": {
+        "Area Number": "80",
+        "Days Survived": "76",
+        "Max Vegetation": "860"
+    },
+    "80": {
+        "Area Number": "81",
+        "Days Survived": "414",
+        "Max Vegetation": "1752"
+    },
+    "81": {
+        "Area Number": "82",
+        "Days Survived": "213",
+        "Max Vegetation": "1370"
+    },
+    "82": {
+        "Area Number": "83",
+        "Days Survived": "260",
+        "Max Vegetation": "1340"
+    },
+    "83": {
+        "Area Number": "84",
+        "Days Survived": "96",
+        "Max Vegetation": "1788"
+    },
+    "84": {
+        "Area Number": "85",
+        "Days Survived": "341",
+        "Max Vegetation": "1947"
+    },
+    "85": {
+        "Area Number": "86",
+        "Days Survived": "70",
+        "Max Vegetation": "1563"
+    },
+    "86": {
+        "Area Number": "87",
+        "Days Survived": "58",
+        "Max Vegetation": "961"
+    },
+    "87": {
+        "Area Number": "88",
+        "Days Survived": "187",
+        "Max Vegetation": "1853"
+    },
+    "88": {
+        "Area Number": "89",
+        "Days Survived": "158",
+        "Max Vegetation": "637"
+    },
+    "89": {
+        "Area Number": "90",
+        "Days Survived": "199",
+        "Max Vegetation": "1054"
+    },
+    "90": {
+        "Area Number": "91",
+        "Days Survived": "69",
+        "Max Vegetation": "967"
+    },
+    "91": {
+        "Area Number": "92",
+        "Days Survived": "62",
+        "Max Vegetation": "854"
+    },
+    "92": {
+        "Area Number": "93",
+        "Days Survived": "147",
+        "Max Vegetation": "887"
+    },
+    "93": {
+        "Area Number": "94",
+        "Days Survived": "158",
+        "Max Vegetation": "2262"
+    },
+    "94": {
+        "Area Number": "95",
+        "Days Survived": "60",
+        "Max Vegetation": "1400"
+    },
+    "95": {
+        "Area Number": "96",
+        "Days Survived": "419",
+        "Max Vegetation": "2514"
+    },
+    "96": {
+        "Area Number": "97",
+        "Days Survived": "45",
+        "Max Vegetation": "583"
+    },
+    "97": {
+        "Area Number": "98",
+        "Days Survived": "48",
+        "Max Vegetation": "316"
+    },
+    "98": {
+        "Area Number": "99",
+        "Days Survived": "59",
+        "Max Vegetation": "801"
+    },
+    "99": {
+        "Area Number": "100",
+        "Days Survived": "163",
+        "Max Vegetation": "2196"
+    }
+}
