@@ -43,3 +43,5 @@ Skills used:
 
 * Project documentation with pdoc
 
+![](images/documentation_example.PNG)
+
