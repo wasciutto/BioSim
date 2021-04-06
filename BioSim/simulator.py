@@ -12,18 +12,18 @@ def simulate(config, log, num_trials):
 
     log.info("Simulation Started")
     for x in range(0, num_trials):
-        environ = EnvironGenerator(int(config['DEFAULT']['LIGHT_RAIN_CHANCE']),
-                                   int(config['DEFAULT']['HEAVY_RAIN_CHANCE']))
+        environ = EnvironGenerator(int(config['LIGHT_RAIN_CHANCE']),
+                                   int(config['HEAVY_RAIN_CHANCE']))
         bio1 = BioArea(environ,
-                       int(config['DEFAULT']['STARTING_WATER_LEVEL']),
-                       int(config['DEFAULT']['STARTING_VEG_LEVEL']),
-                       int(config['DEFAULT']['FLAT_EVAPORATION']),
-                       int(config['DEFAULT']['LIGHT_RAIN_AMOUNT']),
-                       int(config['DEFAULT']['HEAVY_RAIN_AMOUNT']),
-                       int(config['DEFAULT']['LONG_DROUGHT_DAYS']),
-                       int(config['DEFAULT']['SHORT_DROUGHT_DAYS']),
-                       float(config['DEFAULT']['LONG_DROUGHT_MULTIPLIER']),
-                       float(config['DEFAULT']['SHORT_DROUGHT_MULTIPLIER'])
+                       int(config['STARTING_WATER_LEVEL']),
+                       int(config['STARTING_VEG_LEVEL']),
+                       int(config['FLAT_EVAPORATION']),
+                       int(config['LIGHT_RAIN_AMOUNT']),
+                       int(config['HEAVY_RAIN_AMOUNT']),
+                       int(config['LONG_DROUGHT_DAYS']),
+                       int(config['SHORT_DROUGHT_DAYS']),
+                       float(config['LONG_DROUGHT_MULTIPLIER']),
+                       float(config['SHORT_DROUGHT_MULTIPLIER'])
                        )
         log.debug(environ)
         log.debug(bio1)
@@ -60,7 +60,7 @@ def run_cli(num_trials):
 
     log = logging.getLogger(__name__)
 
-    trial_results = simulate(config, log, num_trials)
+    trial_results = simulate(config['DEFAULT'], log, num_trials)
 
     generate_csv_report(trial_results)
 
