@@ -21,14 +21,13 @@ class EnvironGenerator:
         self.day = 0
     
     def __str__(self):
-        return "Day: " + str(self.day) \
+        return "\nDay: " + str(self.day) \
         + "\nPrecipitation Level: " + str(self.precipLevel) + "\n"
     
     def next_day(self):
         self.precipLevel = self.gen_precip_level()
         self.day += 1
-    
-    #0 indicates no precip, 1 indicates light precip, 2 indicates heavy precip
+
     def gen_precip_level(self):
         odds = random.randint(0,100)
         if self.light_rain_chance <= odds < self.heavy_rain_chance:
@@ -60,8 +59,9 @@ class BioArea:
         self.maxVegetation = 0
         self.droughtStreak = 0
     
-    #call order for bio area simulation actions
+    #
     def next_day(self):
+        """Call order for bio area simulation actions."""
         
         self.drain_water()
         self.check_precip()
@@ -72,9 +72,10 @@ class BioArea:
         #Record maximum vegetation value
         if (self.vegetation > self.maxVegetation):
             self.maxVegetation = self.vegetation
-    
-    #removes water based on water absorption factors
+
     def drain_water(self):
+        """Removes water based on water absorption factors."""
+
         #Standard evaporation
         self.lower_water(self.flat_evaporation)
         
@@ -82,8 +83,10 @@ class BioArea:
         absorption_rate = round(self.vegetation * (1/100), 2)
         self.lower_water(absorption_rate)
     
-    #increases water level based on precipitation
+
     def check_precip(self):
+        """Increases water level based on precipitation."""
+
         if environ.precipLevel == PrecipLevel.LIGHT:
             self.raise_water(self.light_rain_amount)
         elif environ.precipLevel == PrecipLevel.HEAVY:
@@ -99,9 +102,9 @@ class BioArea:
         #vegeplier ranges from .75 to 1.25
         else: 
             self.vegeplier = 1 + round(((self.waterLevel - 50) * (1/200)),2)
-    
-    #increases drought streak by 1 if water level is 0
+
     def check_drought_streak(self):
+        """Increases drought streak by 1 if water level is 0."""
         if self.waterLevel == 0:
             self.droughtStreak += 1
         else:
@@ -123,13 +126,14 @@ class BioArea:
         #    self.vegetation = 1000
         
     def __str__(self):
-       return "Area #" + str(self.areaNumber) \
+       return "\nArea #" + str(self.areaNumber) \
        + "\nWater Level: " + str(self.waterLevel) \
        + "\nVegetation: " + str(self.vegetation) \
        + "\nVegeplier: x" + str(self.vegeplier) + "\n"
         
-#simulation test ground
+
 if __name__ == "__main__":
+    """ Simulation test ground """
     config = configparser.ConfigParser()
     config.read('sim_config.ini')
 
