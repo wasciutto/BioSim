@@ -47,9 +47,9 @@ class BioArea:
 
     areaNumber = 0
     
-    def __init__(self, environment, starting_water_level: int, starting_veg_level: int, flat_evaporation:int ,
-                 light_rain_amount: int, heavy_rain_amount: int, long_drought_days:int , long_drought_multiplier: float,
-                 short_drought_days:int, short_drought_multiplier: float):
+    def __init__(self, environment: EnvironGenerator, starting_water_level: int, starting_veg_level: int,
+                 flat_evaporation:int, light_rain_amount: int, heavy_rain_amount: int, long_drought_days:int ,
+                 long_drought_multiplier: float, short_drought_days:int, short_drought_multiplier: float):
 
         BioArea.areaNumber += 1
         self.waterLevel = starting_water_level
