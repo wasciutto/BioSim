@@ -1,24 +1,20 @@
 import random
 import math
+import configparser
 
-NO_RAIN = 0
-LIGHT_RAIN = 1
-HEAVY_RAIN = 2
-LIGHT_RAIN_CHANCE = 80
-HEAVY_RAIN_CHANCE = 95
-STARTING_WATER_LEVEL = 100
-STARTING_VEG_LEVEL = 100
-FLAT_EVAPORATION = 5
-LIGHT_RAIN_AMOUNT = 30
-HEAVY_RAIN_AMOUNT = 50
-LONG_DROUGHT_DAYS = 4
-SHORT_DROUGHT_DAYS = 1
-LONG_DROUGHT_MULTIPLIER = .5
-SHORT_DROUGHT_MULTIPLIER = .75
+from enum import Enum
+
+class Precipitation(Enum):
+    NONE = 0
+    LIGHT = 1
+    HEAVY = 2
+
 
 class EnvironGenerator:
     
-    def __init__(self):
+    def __init__(self, light_rain_chance, heavy_rain_chance):
+        self.light_rain_chance = light_rain_chance
+        self.heavy_rain_chance = heavy_rain_chance
         self.precipLevel = self.genPrecipLevel()
         self.day = 0
     
@@ -33,20 +29,29 @@ class EnvironGenerator:
     #0 indicates no precip, 1 indicates light precip, 2 indicates heavy precip
     def genPrecipLevel(self):
         odds = random.randint(0,100)
-        if (odds >= LIGHT_RAIN_CHANCE and odds < HEAVY_RAIN_CHANCE):
-            return LIGHT_RAIN
-        elif (odds >= HEAVY_RAIN_CHANCE):
-            return HEAVY_RAIN
+        if (odds >= self.light_rain_chance and odds < self.heavy_rain_chance):
+            return Precipitation.LIGHT
+        elif (odds >= self.heavy_rain_chance):
+            return Precipitation.HEAVY
         else:
-            return NO_RAIN
+            return Precipitation.NONE
     
 
 class BioArea:
     areaNumber = 0
     
-    def __init__(self, environ):
-        self.waterLevel = STARTING_WATER_LEVEL
-        self.vegetation = STARTING_VEG_LEVEL
+    def __init__(self, environ, starting_water_level, starting_veg_level, flat_evaporation, light_rain_amount,
+                 heavy_rain_amount, long_drought_days, long_drought_multiplier, short_drought_days,
+                 short_drought_multiplier):
+        self.waterLevel = starting_water_level
+        self.vegetation = starting_veg_level
+        self.flat_evaporation = flat_evaporation
+        self.light_rain_amount = light_rain_amount
+        self.heavy_rain_amount = heavy_rain_amount
+        self.long_drought_days = long_drought_days
+        self.long_drought_multiplier = long_drought_multiplier
+        self.short_drought_days = short_drought_days
+        self.short_drought_multiplier = short_drought_multiplier
         BioArea.areaNumber += 1
         self.environ = environ
         self.vegeplier = 0
@@ -69,7 +74,7 @@ class BioArea:
     #removes water based on water absorption factors
     def drainWater(self):
         #Standard evaporation
-        self.lowerWater(FLAT_EVAPORATION)
+        self.lowerWater(self.flat_evaporation)
         
         #Vegetation absorption formula
         absorptionRate = round(self.vegetation * (1/100), 2)
@@ -77,17 +82,17 @@ class BioArea:
     
     #increases water level based on precipitation
     def checkPrecip(self):
-        if(environ.precipLevel == LIGHT_RAIN):
-            self.raiseWater(LIGHT_RAIN_AMOUNT)
-        elif(environ.precipLevel == HEAVY_RAIN):
-            self.raiseWater(HEAVY_RAIN_AMOUNT)
+        if(environ.precipLevel == Precipitation.LIGHT):
+            self.raiseWater(self.light_rain_amount)
+        elif(environ.precipLevel == Precipitation.HEAVY):
+            self.raiseWater(self.heavy_rain_amount)
     
     def setVegeplier(self):
         #drought multiplier (overrides vegetation growth formula)
-        if(self.droughtStreak > LONG_DROUGHT_DAYS):
-            self.vegeplier = LONG_DROUGHT_MULTIPLIER
-        elif(self.droughtStreak > SHORT_DROUGHT_DAYS):
-            self.vegeplier = SHORT_DROUGHT_MULTIPLIER
+        if(self.droughtStreak > self.long_drought_days):
+            self.vegeplier = self.long_drought_multiplier
+        elif(self.droughtStreak > self.short_drought_days):
+            self.vegeplier = self.short_drought_multiplier
         #vegetation growth formula
         #vegeplier ranges from .75 to 1.25
         else: 
@@ -123,6 +128,10 @@ class BioArea:
         
 #simulation test ground
 if __name__ == "__main__":
+    config = configparser.ConfigParser()
+    config.read('sim_config.ini')
+
+
     cVeg = 0
     cDays = 0
     with open('csvfile.csv','w') as file:
@@ -130,8 +139,19 @@ if __name__ == "__main__":
         file.write("Test Number,Days Survived,Max Vegetation\n")
         
         for x in range(0, 50):    
-            environ = EnvironGenerator()
-            bio1 = BioArea(environ)
+            environ = EnvironGenerator(int(config['DEFAULT']['LIGHT_RAIN_CHANCE']),
+                                       int(config['DEFAULT']['HEAVY_RAIN_CHANCE']))
+            bio1 = BioArea(environ,
+                           int(config['DEFAULT']['STARTING_WATER_LEVEL']),
+                           int(config['DEFAULT']['STARTING_VEG_LEVEL']),
+                           int(config['DEFAULT']['FLAT_EVAPORATION']),
+                           int(config['DEFAULT']['LIGHT_RAIN_AMOUNT']),
+                           int(config['DEFAULT']['HEAVY_RAIN_AMOUNT']),
+                           int(config['DEFAULT']['LONG_DROUGHT_DAYS']),
+                           int(config['DEFAULT']['SHORT_DROUGHT_DAYS']),
+                           float(config['DEFAULT']['LONG_DROUGHT_MULTIPLIER']),
+                           float(config['DEFAULT']['SHORT_DROUGHT_MULTIPLIER'])
+                           )
             print(environ)
             print(bio1)
             while(bio1.vegetation > 1):
