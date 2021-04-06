@@ -41,3 +41,5 @@ Skills used:
 
 ![](images/api_post_output.PNG)
 
+* Project documentation with pdoc
+
