@@ -1,8 +1,8 @@
-import configparser
 import csv
 import json
 import logging
 import click
+import configparser
 
 from BioSim.model import EnvironGenerator, BioArea
 
@@ -71,5 +71,4 @@ def run_cli(num_trials, csv, json):
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG, format='%(levelname)s:%(asctime)s %(message)s')
     run_cli()
