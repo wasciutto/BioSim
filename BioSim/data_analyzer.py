@@ -16,8 +16,9 @@ def plot_data(data: numpy.ndarray, headers: tuple):
     plt.show()
 
 @click.command()
-@click.option('--csv_path', default=None, help="Path to csv containing data")
-def run_cli(csv_path):
+@click.option('--csv-path', default=None, help="Path to csv containing data")
+@click.option('--plot/--no-plot', default=True, help="Display plot")
+def run_cli(csv_path, plot):
     config = configparser.ConfigParser()
     config.read('sim_config.ini')
     config = config['DEFAULT']
@@ -28,7 +29,7 @@ def run_cli(csv_path):
     csv_data = numpy.genfromtxt(csv_path, dtype=int, delimiter=',', names=True)
     headers = csv_data.dtype.names
 
-    plot_data(csv_data, headers)
+    if plot: plot_data(csv_data, headers)
 
 
 if __name__ == "__main__":
