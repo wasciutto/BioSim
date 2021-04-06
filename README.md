@@ -23,17 +23,13 @@ Skills used:
 
 ## Features
 
-* Model parameters adjustable through configuration file
-* CLI configurable options
-* CSV and JSON report generation
-* Logging of simulation outputs
-
-
-![](images/logging_example.PNG)
-
 * Color-weighted scatterplot visualization
 
 ![](images/scatter_plot_example.PNG)
+
+* CLI configurable options
+  
+![](images/CLI_example_1.PNG)
 
 * API endpoint for web delivery
 
@@ -41,7 +37,14 @@ Skills used:
 
 ![](images/api_post_output.PNG)
 
+* Logging of simulation outputs
+
+![](images/logging_example.PNG)
+
+
 * Project documentation with pdoc
 
 ![](images/documentation_example.PNG)
 
+* Model parameters adjustable through configuration file
+* CSV and JSON report generation
