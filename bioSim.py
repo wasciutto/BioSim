@@ -1,6 +1,7 @@
 import random
 import math
 import configparser
+import csv
 
 from enum import Enum
 
@@ -134,9 +135,11 @@ if __name__ == "__main__":
 
     cVeg = 0
     cDays = 0
-    with open('csvfile.csv','w') as file:
+    with open('sim_output.csv', 'w', newline='') as file:
     
-        file.write("Test Number,Days Survived,Max Vegetation\n")
+        writer = csv.writer(file)
+
+        writer.writerow(["Test Number", "Days Survived", "Max Vegetation"])
         
         for x in range(0, 50):    
             environ = EnvironGenerator(int(config['DEFAULT']['LIGHT_RAIN_CHANCE']),
@@ -159,8 +162,7 @@ if __name__ == "__main__":
                 bio1.next_day()
                 print(environ)
                 print(bio1)
-            line = str(bio1.areaNumber) + "," + str(environ.day) + "," + str(bio1.maxVegetation) + "\n"
-            file.write(line)
+            writer.writerow([bio1.areaNumber, str(environ.day), str(bio1.maxVegetation)])
             
             cVeg += bio1.maxVegetation
             cDays += environ.day
