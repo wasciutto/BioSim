@@ -1,12 +1,15 @@
 import csv
 import json
 import logging
+from typing import Dict
+
 import click
 import configparser
 
 from BioSim.model import EnvironGenerator, BioArea
 
-def run_trial(config, log):
+def run_trial(config, log) -> Dict:
+    """Run a single trial."""
     environ = EnvironGenerator(int(config['LIGHT_RAIN_CHANCE']),
                                int(config['HEAVY_RAIN_CHANCE']))
     bio1 = BioArea(environ,
@@ -30,7 +33,9 @@ def run_trial(config, log):
 
     return {"Area Number":str(bio1.areaNumber), "Days Survived":str(environ.day), "Max Vegetation":str(bio1.maxVegetation)}
 
-def run_trials(config, log, num_trials):
+def run_trials(config, log, num_trials) -> Dict:
+    """Run multiple trials."""
+
     trial_results = {}
 
     log.info("Simulation Started")
@@ -42,6 +47,8 @@ def run_trials(config, log, num_trials):
     return trial_results
 
 def generate_csv_report(config, trial_results):
+    """Create a CSV report from the trial dict."""
+
     with open(config['CSV_REPORT_PATH'], 'w', newline='') as file:
         writer = csv.writer(file)
 
@@ -51,6 +58,8 @@ def generate_csv_report(config, trial_results):
             writer.writerow(trial_results[trial].values())
 
 def generate_json_report(config, trial_results):
+    """Create a JSON report from the trial dict."""
+
     with open(config['JSON_REPORT_PATH'], 'w', encoding='utf-8') as file:
         json.dump(trial_results, file, ensure_ascii=False, indent=4)
 
@@ -59,6 +68,8 @@ def generate_json_report(config, trial_results):
 @click.option('--csv/--no-csv', default=True, help="Create a csv report.")
 @click.option('--json/--no-json', default=False, help="Create a json report")
 def run_cli(num_trials, csv, json):
+    """Run the CLI with the given configuration."""
+
     config = configparser.ConfigParser()
     config.read('sim_config.ini')
 
